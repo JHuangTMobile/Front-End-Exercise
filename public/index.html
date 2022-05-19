@@ -15,9 +15,10 @@
         document.getElementById('addRecipe').style.display = "block";
         document.getElementById('addRecipeButton').style.display = "none";
       }
-      function addToList(recipe){
+      function addToList(){
         var ul = document.getElementById("recipeList");
-        ul.appendChild(document.createTextNode(recipe));
+        var test = document.getElementById("recipe-name").value;
+        ul.appendChild(document.createTextNode(document.getElementById("recipe-name").value));
         document.getElementById('recipeList').style.display = "block";
       }
     </script>
@@ -31,19 +32,17 @@
 
     <div>
       <ul id="recipeList" style="display:none;">
-        <li>TEST</li>
       </ul>
 
     </div>
     <div id="addRecipe" style="display:none;">
       <form>
         <label for="recipe-name">recipe-name</label><br>
-        <input type="textbox" id="recipe-name" name="fname"><br>
+        <input type="textbox" id="recipe-name" name="recipe-name"><br>
         <label for="recipe-instructions">recipe-instructions:</label><br>
         <input type="textbox" id="recipe-instructions" name="recipe-instructions">
-        <button form="addRecipe" onclick="addToList(recipe-name)">Submit</button>
       </form>
-      
+      <button form="addRecipe" onclick="addToList()">Submit</button>
     </div>
     
   </body>
