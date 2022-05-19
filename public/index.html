@@ -16,10 +16,12 @@
         document.getElementById('addRecipeButton').style.display = "none";
       }
       function addToList(){
-        var ul = document.getElementById("recipe");
+        var ul = document.getElementById("recipeList");
         var test = document.getElementById("recipe-name").value;
-        ul.appendChild(document.createTextNode(document.getElementById("recipe-name").value));
-        document.getElementById('recipe').style.display = "block";
+        var p = document.createElement("li");
+        p.innerText = test;
+        ul.appendChild(p);
+        document.getElementById('recipeList').style.display = "initial";
       }
     </script>
 
@@ -31,7 +33,7 @@
     <button id="addRecipeButton" onclick="showDiv()" style="display:block">Add Recipes</button>
 
     <div>
-      <ul id="recipe" style="display:none;">
+      <ul id="recipeList" style="display:none;">
       </ul>
 
     </div>
