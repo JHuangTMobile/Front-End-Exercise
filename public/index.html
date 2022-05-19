@@ -10,7 +10,40 @@
     <title>React App</title>
   </head>
   <body>
+    <script>
+      function showDiv() {
+        document.getElementById('addRecipe').style.display = "block";
+        document.getElementById('addRecipeButton').style.display = "none";
+      }
+      function addToList(recipe){
+        var ul = document.getElementById("recipeList");
+        ul.appendChild(document.createTextNode(recipe));
+        document.getElementById('recipeList').style.display = "block";
+      }
+    </script>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <h1>My Recipes</h1>
+    <p>There are no recipes to list</p>
+    <button id="addRecipeButton" onclick="showDiv()" style="display:block">Add Recipes</button>
+
+    <div>
+      <ul id="recipeList" style="display:none;">
+        <li>TEST</li>
+      </ul>
+
+    </div>
+    <div id="addRecipe" style="display:none;">
+      <form>
+        <label for="recipe-name">Recipe Name:</label><br>
+        <input type="text" id="recipe-name" name="fname"><br>
+        <label for="recipe-instructions">Recipe Instructions:</label><br>
+        <input type="text" id="recipe-instructions" name="recipe-instructions">
+        <button form="addRecipe" onclick="addToList(recipe-name)">Submit</button>
+      </form>
+      
+    </div>
+    
   </body>
 </html>
